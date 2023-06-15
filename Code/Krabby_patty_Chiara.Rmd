@@ -110,6 +110,9 @@ Grafico migliore!
 tree<-rpart(Age~., data=ds2)
 rpart.plot(tree)
 ```
-
+```{r}
+predict(bag.krabby, ds1[4,-9], type="response",
++         norm.votes=TRUE, predict.all=FALSE, proximity=FALSE, nodes=FALSE)
+```
 
 
