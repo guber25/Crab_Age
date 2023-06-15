@@ -27,13 +27,13 @@ glimpse(ds1)
 
 ```{r}
 #We try to find some correlation between the variables. Clearly some correlation is present but there are many outliers.
-plot(ds1, col="blue")
+ds1 %>% select(-c(Sex,Age)) %>% plot(col="#FF6600")
 ```
 
 ```{r}
 #In this way we look at the distribution of the variables and we see, again, the presence of outliers and of skewed distribution
 ggplot(gather(select(ds1, -c("Sex"))), aes(value)) + 
-    geom_histogram(bins = 10, fill="yellow", color="blue") +
+    geom_histogram(bins = 10, fill="#FF6600", color="black") +
     facet_wrap(~key, scales = 'free', ) 
 ```
 
@@ -43,7 +43,7 @@ glimpse(ds1)
 
 ```{r}
 ggplot(gather(select(ds1, -c("Sex"))), aes(value)) + 
-    geom_boxplot(fill="yellow", color="blue", outlier.colour = "darkorange") + 
+    geom_boxplot(fill="#FF6600", color="black", outlier.colour = "#FF6600") + 
     facet_wrap(~key, scales = 'free')
 ```
 
@@ -74,7 +74,7 @@ as.data.frame(colSums(is.na(ds1)))
 ```{r}
 #as the plots show, there are no more outliers
 ggplot(gather(select(ds1, -c("Sex"))), aes(value)) + 
-    geom_boxplot(fill="yellow", color="blue", outlier.colour = "darkorange") + 
+    geom_boxplot(fill="#FF6600", color="black", outlier.colour = "#FF6600") + 
     facet_wrap(~key, scales = 'free')
 ```
 
@@ -112,11 +112,11 @@ head(ds1, 5)
 
 ```{r}
 #Correlation matrix
-ds1 %>% select(-Sex) %>% cor() %>% melt() %>% #here I am creating the correlation matrix between each other variable (excluding Sex) and "melting" it to creating a data frame which will be used to then create the ggplot 
+ds1 %>% select(-c(Sex,Age)) %>% cor() %>% melt() %>% #here I am creating the correlation matrix between each other variable (excluding Sex) and "melting" it to creating a data frame which will be used to then create the ggplot 
   ggplot(aes(x=Var1, y=Var2, fill=value)) + 
     geom_tile() +
-    geom_text(aes(Var1, Var2, label = round(value, 2)), size = 3, color="white") +
-      scale_fill_gradient2(low = "12123220", high = "darkblue",
+    geom_text(aes(Var1, Var2, label = round(value, 2)), size = 3, color="black") +
+      scale_fill_gradient2(low = "#FFFF66", high = "#FF6600",
                          limit = c(-1,1), name="Correlation") +
     theme(axis.text.x = element_text(angle = 45, vjust = .5), 
           axis.title.x = element_blank(),
