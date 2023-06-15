@@ -22,6 +22,7 @@ sqrt(vif(lm.fitlog)) > 2
 ```
 
 
+# Best model selection done by Chiara
 ```{r}
 step.model = lm(Age~., data=ds2)
 summary(step.model)
