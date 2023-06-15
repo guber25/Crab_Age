@@ -14,4 +14,6 @@ We are all students of the Data Science for Economics master's degree at Univers
 The aim of the project is to predict the expected living time of a crab 🦀 given info about its body.
 This will be performed through statistical learning operations, both in the supervised and in the unsupervised framework.
 
+We have uploaded for convenience the dataset in the repo but it is actually taken from Kaggle and you can find it at this link: https://www.kaggle.com/datasets/sidhus/crab-age-prediction. 
+
 Hope you enjoy!!
