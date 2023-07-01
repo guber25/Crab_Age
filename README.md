@@ -3,7 +3,7 @@ Statistical learning group project.
 
 The authors of the project are:
 - Chiara Anni (https://github.com/chiaraanni)
-- Guglielmo Berzano (me)
+- Guglielmo Berzano (https://github.com/guber25)
 - Alessandro Cantoni (https://github.com/AleCantoni117)
 - Michela Mazzaglia (https://github.com/michaglia)
 - Matteo Matone (https://github.com/maton098)
